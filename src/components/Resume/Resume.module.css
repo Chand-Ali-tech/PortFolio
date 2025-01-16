@@ -1,0 +1,130 @@
+.title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  /* color: #d8d8d8; */
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0px;
+  position: relative;
+  margin: 20px 0;
+  margin-bottom: 50px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* Two columns per row */
+  gap: 1rem;
+  /* Space between cards */
+  padding: 2rem;
+  /* Padding around the grid */
+}
+
+.headingCard {
+  display: flex;
+  flex-direction: column;
+  /* Align icon and heading vertically */
+  justify-content: center;
+  align-items: center;
+  /* background: black; */
+  /* Background color of the card */
+  border: 1px solid #6ebb02;
+  /* Border style */
+  border-radius: 15px;
+  /* Rounded corners */
+  padding: 1.5rem;
+  /* Inner padding */
+  text-align: center;
+  /* Center-align content */
+  transition: all 0.3s ease;
+  /* Smooth hover effect */
+  width: 250px;
+  height: 80px;
+}
+
+.headingCard:hover {
+
+  transform: translateY(-10px);
+  /* Move card up on hover */
+}
+
+.icon {
+  font-size: 2.5rem;
+  /* Size of FontAwesome icon */
+  color: #6ebb02;
+  /* Icon color */
+  margin-bottom: 1rem;
+  /* Space below the icon */
+}
+
+h2 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  /* color: white; */
+  color: var(--text-color);
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+
+
+.downloadButton {
+  text-align: center;
+  font-size: 1rem;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: black;
+  color: rgba(149, 255, 0, 1);
+  border: 2px solid rgba(149, 255, 0, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto 0 auto;
+  /* Center button horizontally */
+  background-color: rgba(149, 255, 0, 1);
+  color: black;
+}
+
+.__set {
+  margin-left: 20px;
+  font-size: 30px;
+}
+
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .grid {
+    padding: 1rem;
+    gap: 1rem; /* Reduce spacing between cards */
+  }
+
+  .headingCard {
+    width: 70%;
+    padding: 1rem; /* Smaller padding on smaller screens */
+    height: 70%; /* Adjust height for content */
+  }
+
+  .icon {
+    font-size: 2rem; /* Smaller icons */
+  }
+
+  h2 {
+    font-size: 1rem; /* Reduce heading font size */
+  }
+
+  .downloadButton {
+    width: 80%; /* Full width button for mobile */
+    font-size: 1rem;
+  }
+
+  .__set {
+    font-size: 20px; /* Adjust file icon size */
+  }
+}

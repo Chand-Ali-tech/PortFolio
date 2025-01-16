@@ -1,0 +1,142 @@
+/* General container for the form */
+.connectContainer {
+  margin-top: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+h1{
+  margin-bottom: 0px !important;
+}
+/* Styling for the form container */
+.formContainer {
+  width: 100%;
+  max-width: 500px;
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid #6ebb02;
+  box-shadow: 0 1px 1px #6ebb02;
+}
+
+/* Form heading */
+.formContainer h2 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #6ebb02;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Styling for each form group */
+.formGroup {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Input fields */
+.formGroup input,
+.formGroup textarea {
+  box-shadow: 1px #6ebb02;
+  padding: 12px;
+  font-size: 16px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #333;
+  transition: border-color 0.3s ease;
+  border-bottom: 1px solid #6ebb02;
+}
+
+/* Placeholder styling */
+.formGroup input::placeholder,
+.formGroup textarea::placeholder {
+  color: #777;
+}
+
+/* Focus effect for inputs */
+.formGroup input:focus,
+.formGroup textarea:focus {
+  outline: none;
+}
+
+/* Hover effect for inputs */
+.formGroup input:hover,
+.formGroup textarea:hover {
+  background-color: rgba(156, 249, 156, 0.1);
+}
+
+/* Textarea specific styling */
+.formGroup textarea {
+  resize: none;
+  height: 100px;
+}
+
+/* Submit button */
+.submitButton {
+  padding: 14px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #00ff00;
+  color: #000;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  width: 130px;
+  height: 30px;
+}
+
+/* Hover effect for submit button */
+.submitButton:hover {
+  background-color: #00cc00;
+  transform: scale(1.05);
+}
+.connectContainer{
+  margin: 0;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+  .formContainer {
+    padding: 20px;
+  }
+
+  .formContainer h2 {
+    font-size: 24px;
+  }
+
+  .formGroup input,
+  .formGroup textarea {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .submitButton {
+    font-size: 16px;
+    padding: 12px;
+    width: 80%; /* Make the button span the width on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .formContainer {
+    padding: 15px;
+  }
+
+  .formContainer h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .formGroup input,
+  .formGroup textarea {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .submitButton {
+    font-size: 14px;
+    padding: 10px;
+  }
+}

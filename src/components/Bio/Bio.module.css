@@ -1,0 +1,177 @@
+/* General container styling */
+.bioContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 40px;
+    border-radius: 15px;
+    overflow: hidden;
+    animation: fadeInContainer 1.5s ease-in-out;
+    font-family: "Thunder Bold", sans-serif;
+    height: 600px;
+}
+
+/* Text section styling */
+.textSection {
+    max-width: 70%;
+    animation: slideInText 2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.textSection h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    line-height: 1.2;
+    font-weight: 800;
+    font-family: "Arial Black", sans-serif;
+}
+
+.textSection h1 span {
+    animation: textGlow 3s infinite alternate;
+    color: #95ff00;
+    font-weight: 900;
+}
+
+.textSection p {
+    font-size: 1.8rem;
+    margin: 20px 0;
+    font-weight: 700;
+    color: #c6c1c1;
+    font-family: "Arial", sans-serif;
+}
+
+.textSection p span {
+    color: #95ff00;
+    font-weight: 800;
+    font-style: italic;
+    font-family: "Arial Black", sans-serif;
+}
+
+.textSection p span::after {
+    content: "|";
+    display: inline-block;
+    margin-left: 5px;
+    animation: blink 0.7s steps(2, start) infinite;
+}
+
+/* Image section styling */
+.imageSection {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    animation: slideInImage 1.8s ease-out;
+}
+
+.imageSection img {
+    height: 400px;
+    width: auto;
+    border-radius: 20px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.7);
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Animations */
+@keyframes slideInText {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInImage {
+    0% {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInContainer {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes textGlow {
+    from {
+        text-shadow: 0px 0px 5px rgba(149, 255, 0, 0.8);
+    }
+
+    to {
+        text-shadow: 0px 0px 15px rgba(149, 255, 0, 1);
+    }
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+@keyframes flyIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.bioContainer.flyIn {
+    animation: flyIn 1.5s ease-in-out forwards;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .bioContainer {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+        height: auto;
+        margin-top: 100px;
+        margin-bottom: 200px;
+    }
+
+    .textSection {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .textSection h1 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+
+    .textSection p {
+        font-size: 1.2rem;
+        margin: 10px 0;
+    }
+
+    .imageSection {
+        max-width: 100%;
+        justify-content: center;
+    }
+
+    .imageSection img {
+        height: 200px;
+        width: 200px;
+        border-radius: 15px;
+    }
+}

@@ -1,0 +1,185 @@
+/* Header container */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 15px 0;
+    /* Remove horizontal padding to eliminate left/right spaces */
+    position: relative;
+    z-index: 1000;
+}
+
+/* Logo styling */
+.logo {
+    flex-shrink: 0;
+    margin-left: 0;
+    /* Remove margin to align logo flush to the left */
+}
+
+.logo img {
+    height: 60px;
+    width: auto;
+    border-radius: 15%;
+    object-fit: contain;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Navigation menu */
+.nav {
+    display: flex;
+    gap: 30px;
+    margin-left: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav h1 {
+    font-size: 18px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin: 0;
+    text-decoration: none;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.nav h1:hover {
+    color: rgb(149, 255, 0);
+    text-shadow: 0px 0px 8px rgb(149, 255, 0);
+}
+
+/* Sidebar icon (bars and cross) */
+.sidebarIcon {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 1001;
+    margin-left: 10px;
+    /* Space between theme changer and sidebar icon */
+}
+
+/* Sidebar active state */
+.nav.active {
+    transform: translateX(0);
+    flex-direction: column;
+    position: absolute;
+    top: 90px;
+    right: 0;
+    background-color: var(--background-color);
+    padding: 20px;
+    gap: 30px;
+    width: 100%;
+    /* max-width: 300px; */
+    box-shadow: 0px 0px 1px rgb(149, 255, 0);
+    z-index: 1000;
+    color: var(--text-color);
+    height: 350px;
+    width: 350px;
+    border-radius: 15px;
+}
+
+/* Theme changer section */
+.themeChanger {
+    display: flex;
+    align-items: center;
+    margin-right: 0;
+    /* Remove margin to align flush to the right */
+}
+
+button {
+    all: unset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: black;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 22px;
+    transition: transform 0.2s;
+}
+
+button:hover {
+    background-color: black;
+    transform: none;
+}
+
+.sunIcon,
+.moonIcon {
+    color: rgb(149, 255, 0) !important;
+}
+
+.sunIcon:hover,
+.moonIcon:hover {
+    color: inherit;
+}
+
+/* Mobile-friendly responsiveness */
+@media (max-width: 768px) {
+
+    .header {
+        /* flex-direction: row;
+        align-items: center;
+        justify-content: space-between; */
+        display: fixed;
+    }
+
+    .logo img {
+
+        display: absolute;
+        left: 0px;
+        /* justify-content: left; */
+    }
+
+    .logo {
+        flex-grow: 0;
+        margin-left: 0;
+        /* Ensure logo aligns flush left */
+    }
+
+    .themeChanger {
+        margin-right: 10px;
+        display: flex;
+        align-items: center;
+    }
+
+    .sidebarIcon {
+        display: block;
+        margin-right: 0;
+        /* Align sidebar icon flush to the right */
+    }
+
+    .nav {
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: -100%;
+        flex-direction: column;
+        width: 70%;
+        max-width: 300px;
+        background-color: #000;
+        padding: 20px;
+        gap: 15px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav.active {
+        display: flex;
+        transform: translateX(0);
+    }
+
+    button {
+        margin-left: 0;
+
+    }
+
+    #connect_btn {
+        margin: auto;
+    }
+}
+
+/* General hover effects for sidebar menu */
+.nav h1:hover {
+    color: rgb(149, 255, 0);
+    text-shadow: 0px 0px 8px rgb(149, 255, 0);
+}
