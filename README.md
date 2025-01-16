@@ -8,7 +8,7 @@ This is my **personal portfolio website**, built using **React.js** and powered 
 - **Powered by Vite**: Ensures faster development and hot module replacement (HMR).
 - **Fully Responsive**: Optimized for all devices, including desktops, tablets, and mobile phones.
 - **Modern Design**: A sleek and professional look, with smooth animations and transitions.
-- **Live Preview**: Experience the portfolio live at [**My Portfolio**](#).  
+- **Live Preview**: Experience the portfolio live at [**My Portfolio**](https://port-folio-eight-xi.vercel.app/).  
 
 ## Sections  
 
