@@ -5,6 +5,8 @@ function Bio() {
   const titles = [
     "MERN STACK Developer.",
     "NODE JS Developer.",
+    "REACT JS Developer.",
+    "FULL STACK Developer.",
     "SOFTWARE ENGINEER.",
   ];
   const [currentTitle, setCurrentTitle] = useState(titles[0]);

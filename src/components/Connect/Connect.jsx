@@ -20,7 +20,7 @@ function Connect() {
       <h1>Get in touch!</h1>
       <div className={styles.connectContainer}>
         <div className={styles.formContainer}>
-          <h2>Send us a message 🚀</h2>
+          <h2>Send us a message 🌙</h2>
           {/* Formspree integration */}
           <form 
             action="https://formspree.io/f/xdkkyjaq" 

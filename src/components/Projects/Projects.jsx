@@ -9,25 +9,46 @@ function Projects() {
 
   const projects = [
     {
+      name: "Tour-Folio",
+      url: "/p5.jpg",
+      technologies: ["MERN", "NODE JS", "React JS", "MongoDB", "Tailwind CSS"],
+      description: "Professional website that includes almost everything of stuff related to tours and the places.",
+      link: "https://tourfolio.vercel.app",
+    },
+    {
+      name: "UpStarters",
+      url: "/p7.png",
+      technologies: ["MERN", "NODE JS", "React JS", "MongoDB", "Module CSS"],
+      description: "Platform for rasing funds for bussiness startups.",
+      link: "https://upstarters.vercel.app/",
+    },
+    {
+      name: "StopWatch",
+      url: "/p4.jpg",
+      technologies: ["HTML", "CSS", "API"],
+      description: "A stopwatch project that includes all functionalities of lap, play, pause, reset, etc.",
+      link: "https://chand-ali-tech.github.io/StopWatch/",
+    },
+    {
+      name: "The Quiz App",
+      url: "/p6.png",
+      technologies: ["React JS"],
+      description: "A quiz app that includes all functionalities of quiz, score, timer, etc.",
+      link: "https://quiz-app-zone.vercel.app/",
+    },
+    {
       name: "Quote-Generator",
       url: "/p1.jpg",
       technologies: ["HTML", "CSS", "JS"],
       description: "This is the Quote Generator website that I built in 2nd semester while learning the basics of front-end web development.",
-      link: "https://google.com",
-    },
-    {
-      name: "Tour-Folio",
-      url: "/p5.jpg",
-      technologies: ["MERN", "NODE JS", "PUG"],
-      description: "Professional website that includes almost everything of stuff related to tours and the places.",
-      link: "https://google.com",
+      link: "https://chand-ali-tech.github.io/Quote-Generator/",
     },
     {
       name: "Educational-Platform",
       url: "/p2.jpg",
-      technologies: ["HTML", "React", "CSS", "JavaScript"],
+      technologies: ["HTML", "CSS", "JavaScript"],
       description: "A professional portfolio website showcasing my skills, experience, and projects in web development.",
-      link: "https://google.com",
+      link: "https://chand-ali-tech.github.io/Educational-Platform/",
     },
     {
       name: "Peshawer-Zalmi",
@@ -36,20 +57,7 @@ function Projects() {
       description: "A simple replica of Peshawer Zalmi official website",
       link: "https://google.com",
     },
-    {
-      name: "The Quiz App",
-      url: "/p6.jpg",
-      technologies: ["React JS"],
-      description: "A quiz app that includes all functionalities of quiz, score, timer, etc.",
-      link: "https://google.com",
-    },
-    {
-      name: "StopWatch",
-      url: "/p4.jpg",
-      technologies: ["HTML", "CSS", "API"],
-      description: "A stopwatch project that includes all functionalities of lap, play, pause, reset, etc.",
-      link: "https://google.com",
-    },
+    
   ];
   
   function scrollToSection(id){

@@ -28,7 +28,7 @@
 
 .textSection h1 span {
     animation: textGlow 3s infinite alternate;
-    color: #95ff00;
+    color: #85d710;
     font-weight: 900;
 }
 
@@ -41,7 +41,7 @@
 }
 
 .textSection p span {
-    color: #95ff00;
+    color: #7bcd09;
     font-weight: 800;
     font-style: italic;
     font-family: "Arial Black", sans-serif;

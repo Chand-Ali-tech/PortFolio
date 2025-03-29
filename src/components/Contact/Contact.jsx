@@ -18,7 +18,7 @@ function Contact() {
       <div className={styles.grid}>
         <div className={styles.contactCard}>
           <FontAwesomeIcon icon={faPhone} className={styles.icon} />
-          <h2>0312-4034055</h2>
+          <h2>+92312-4034055</h2>
         </div>
         <div className={styles.contactCard}>
           <FontAwesomeIcon icon={faEnvelope} className={styles.icon} />
@@ -28,11 +28,11 @@ function Contact() {
           <FontAwesomeIcon icon={faLinkedin} className={styles.icon} />
           <h2>
             <a
-              href="https://linkedin.com/in/chandAli"
+              href="https://linkedin.com/in/chand-ali-tech"
               target="_blank"
               rel="noopener noreferrer"
             >
-              linkedin.com/chandAli
+              linkedin.com/in/chand-ali-tech
             </a>
           </h2>
         </div>

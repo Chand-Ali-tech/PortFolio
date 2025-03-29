@@ -40,7 +40,7 @@ function Footer() {
               <FontAwesomeIcon icon={faInstagram} />
             </a>
             <a
-              href="https://linkedin.com/in/chandAli"
+              href="https://linkedin.com/in/chand-ali-tech"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.iconLink}
