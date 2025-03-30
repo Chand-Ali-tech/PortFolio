@@ -1,4 +1,4 @@
-import { useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import Bio from "./components/Bio/Bio";
 import Connect from "./components/Connect/Connect";
@@ -34,7 +34,7 @@ function App() {
       <Resume />
       <Contact />
       <Connect />
-      <Footer /> 
+      <Footer />
     </>
   );
 }

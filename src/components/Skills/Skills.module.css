@@ -1,53 +1,64 @@
+/* Skills Section */
 .__skills {
   text-align: center;
-  padding: 40px 20px;
+  padding: 50px 20px;
 }
 
+/* Heading */
 h1 {
   font-size: 2.5rem;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
+/* Container for all skills */
 .skillsContainer {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 20px;
-  padding: 10px;
-  border-bottom: 2px double gray;
+  gap: 30px;
+  padding: 20px;
+  /* border-bottom: 2px double gray; */
   padding-bottom: 50px;
 }
 
+/* Skill Item */
 .skillItem {
   position: relative;
-  display: inline-block;
-  text-align: center;
-  width: 80px; /* Fixed width for better layout control */
-  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90px;
+  /* Default width */
+  margin: 15px;
+  transition: transform 0.3s ease-in-out;
 }
 
+/* Icon Styles */
 .icon {
-  font-size: 2.5rem; /* Larger icons */
+  font-size: 3rem;
+  /* Default size */
   margin: 10px;
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .icon:hover {
-  transform: scale(1.1); /* Slight zoom effect */
-  color: #95ff00; /* Change color on hover */
+  transform: scale(1.1);
+  color: #95ff00;
+  /* Neon green on hover */
 }
 
+/* Skill Name Tooltip */
 .skillName {
   display: none;
   position: absolute;
-  bottom: -30px; /* Position text below icon */
+  bottom: -35px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.8);
   color: white;
-  padding: 5px 10px;
-  border-radius: 5px;
+  padding: 6px 12px;
+  border-radius: 6px;
   font-size: 1rem;
   opacity: 0;
   transition: opacity 0.3s ease, transform 0.3s ease;
@@ -57,52 +68,168 @@ h1 {
 .skillItem:focus .skillName {
   display: block;
   opacity: 1;
-  transform: translateX(-50%) translateY(10px); /* Slight upward shift for better animation */
+  transform: translateX(-50%) translateY(10px);
 }
 
-/* Responsive Design for Tablets */
-@media (max-width: 768px) {
-  h1 {
-    font-size: 2rem;
-    margin-bottom: 15px;
+/* Responsive Design */
+
+/* Extra Large Screens (Laptops, Desktops) */
+@media (max-width: 1440px) {
+  .skillsContainer {
+    gap: 25px;
   }
 
-  .skillsContainer {
-    gap: 15px; /* Reduced gap for smaller screens */
-    padding: 5px;
+  .skillItem {
+    width: 85px;
   }
 
   .icon {
-    font-size: 2.5rem; /* Slightly smaller icons for tablets */
-  }
-
-  .skillName {
-    font-size: 0.9rem; /* Smaller font size for labels */
+    font-size: 2.8rem;
   }
 }
 
-/* Responsive Design for Mobile Screens */
-@media (max-width: 480px) {
+/* Large Screens (Laptops, Tablets in Landscape) */
+@media (max-width: 1200px) {
+  h1 {
+    font-size: 2.3rem;
+  }
+
+  .skillsContainer {
+    gap: 20px;
+  }
+
+  .skillItem {
+    width: 80px;
+  }
+
+  .icon {
+    font-size: 2.5rem;
+  }
+
+  .skillName {
+    font-size: 0.9rem;
+  }
+}
+
+/* Medium Screens (Tablets, iPads) */
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .skillsContainer {
+    gap: 18px;
+    padding: 15px;
+  }
+
+  .skillItem {
+    width: 75px;
+  }
+
+  .icon {
+    font-size: 2.3rem;
+  }
+
+  .skillName {
+    font-size: 0.85rem;
+  }
+}
+
+/* Small Tablets & Large Phones */
+@media (max-width: 768px) {
   h1 {
     font-size: 1.8rem;
   }
 
   .skillsContainer {
-    gap: 10px;
-    padding: 0;
+    gap: 15px;
+    padding: 10px;
   }
 
   .skillItem {
-    width: 70px; /* Reduced width for icons */
+    width: 70px;
   }
 
   .icon {
-    font-size: 2rem; /* Smaller icons for mobile */
-    margin: 5px;
+    font-size: 2rem;
   }
 
   .skillName {
-    font-size: 0.8rem; /* Adjust label font size */
-    bottom: -25px; /* Adjust position to fit smaller screens */
+    font-size: 0.8rem;
+    bottom: -30px;
+  }
+}
+
+/* Mobile Phones */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+  }
+
+  .skillsContainer {
+    gap: 12px;
+    padding: 5px;
+  }
+
+  .skillItem {
+    width: 65px;
+  }
+
+  .icon {
+    font-size: 1.8rem;
+  }
+
+  .skillName {
+    font-size: 0.75rem;
+    bottom: -28px;
+  }
+}
+
+/* Small Phones (iPhone SE, older devices) */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .skillsContainer {
+    gap: 10px;
+  }
+
+  .skillItem {
+    width: 60px;
+  }
+
+  .icon {
+    font-size: 1.7rem;
+  }
+
+  .skillName {
+    font-size: 0.7rem;
+    bottom: -25px;
+  }
+}
+
+/* Extra Small Devices (Old Phones) */
+@media (max-width: 360px) {
+  h1 {
+    font-size: 1.3rem;
+  }
+
+  .skillsContainer {
+    gap: 8px;
+  }
+
+  .skillItem {
+    width: 55px;
+  }
+
+  .icon {
+    font-size: 1.5rem;
+  }
+
+  .skillName {
+    font-size: 0.65rem;
+    bottom: -22px;
   }
 }

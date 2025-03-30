@@ -1,12 +1,13 @@
 .projectsContainer {
-    /* color: rgba(149, 255, 0, 1); Green text color for consistency */
     padding: 2rem;
     border-radius: 8px;
     margin: 1rem auto;
     max-width: 1200px;
-    /* border-bottom: 1px dashed gray; */
-    border-bottom: 2px double gray;
+    width: 90%;
+    /* Ensure it fills most of the screen while keeping margins */
+    /* border-bottom: 2px double gray; */
 }
+
 .projectsHeader {
     text-align: center;
     margin-bottom: 2rem;
@@ -15,69 +16,104 @@
 .projectsHeader h1 {
     font-size: 2.4rem;
     font-weight: 800;
-    /* color: #d8d8d8; */
-    text-align: center;
     text-transform: uppercase;
-    letter-spacing: 0px;
-    position: relative;
-    margin: 20px 0;
     margin-bottom: 50px;
 }
 
-.projectsHeader p {
-    font-size: 1.2rem;
-    margin: 0.2rem 0;
-}
-
 .projectList {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+    width: 100%;
+    /* Ensures it fills the available space */
 }
 
-/* Add responsiveness for mobile */
-@media (max-width: 768px) {
+/* Buttons */
+button {
+    background-color: rgba(149, 255, 0, 1);
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    display: block;
+    margin: 1rem auto;
+    width: 150px;
+    text-align: center;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: rgba(120, 204, 0, 1);
+    transform: scale(1.05);
+}
+
+/* Tablets (Medium Screens) */
+@media (min-width: 769px) and (max-width: 1023px) {
     .projectsContainer {
-        padding: 1rem;
+        padding: 1.5rem;
+        width: 95%;
+        /* Reduce margin and increase width */
+        margin-bottom: 100px;
     }
 
     .projectsHeader h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
 
-    .projectsHeader p {
-        font-size: 1rem;
+    .projectList {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
     }
-    button {
-        text-align: center; /* Align text inside the button */
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
-        transition: transform 0.2s ease, background-color 0.3s ease;
-        width: 50px;
+
+    .showMoreButton {
+        width: 32%;
+        height: 50px;
     }
-    
-}
-button {
-    background-color: rgba(149, 255, 0, 1); /* Greenish background */
-    color: black; /* Black text */
-   
-    border: none; /* Remove border */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    font-size: 1rem; /* Adjust font size */
-    font-weight: bold;
-    display: block; /* Make it a block element for centering */
-    margin: 1rem auto; /* Center horizontally */
-    text-align: center; /* Align text inside the button */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
-    transition: transform 0.2s ease, background-color 0.3s ease;
-    width: 150px;
 }
 
-/* Add hover effects */
-button:hover {
-    background-color: rgba(120, 204, 0, 1); /* Slightly darker green on hover */
-    transform: scale(1.05); /* Slightly enlarge the button on hover */
+/* Desktops (Large Screens) */
+@media (min-width: 1024px) {
+    .projectsContainer {
+        max-width: 1200px;
+        margin-bottom: 100px;
+    }
+
+    .projectList {
+        grid-template-columns: repeat(3, 1fr);
+        /* Ensures uniform spacing */
+        gap: 2rem;
+    }
+
+    .showMoreButton {
+        width: 150px;
+        height: 50px;
+    }
+
 }
-#projects{
-    margin-bottom: 9rem;
+
+/* Mobile (Small Screens) */
+@media (max-width: 768px) {
+    .projectsContainer {
+        padding: 1rem;
+        width: 90%;
+        margin-bottom: 30px;
+    }
+
+    .projectsHeader h1 {
+        font-size: 1.8rem;
+    }
+
+    .projectList {
+        grid-template-columns: 1fr;
+        /* Full width for small screens */
+        gap: 1rem;
+    }
+
+    .showMoreButton {
+        width: 62%;
+        height: 50px;
+        /* margin-right: 50px; */
+    }
 }

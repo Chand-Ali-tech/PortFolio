@@ -1,20 +1,23 @@
 /* General container styling */
 .bioContainer {
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 30px 40px;
+    flex-wrap: wrap;
+    padding: 40px;
     border-radius: 15px;
     overflow: hidden;
     animation: fadeInContainer 1.5s ease-in-out;
     font-family: "Thunder Bold", sans-serif;
-    height: 600px;
+    height: auto;
+    max-width: 1200px;
+    margin: auto;
 }
 
 /* Text section styling */
 .textSection {
-    max-width: 70%;
+    flex: 1;
+    width: 100%;
     animation: slideInText 2s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
@@ -24,9 +27,16 @@
     line-height: 1.2;
     font-weight: 800;
     font-family: "Arial Black", sans-serif;
+    white-space: nowrap;
+    /* Prevents text from wrapping */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* Adds "..." if text overflows */
 }
 
+
 .textSection h1 span {
+    width: 100%;
     animation: textGlow 3s infinite alternate;
     color: #85d710;
     font-weight: 900;
@@ -58,12 +68,12 @@
 .imageSection {
     flex: 1;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     animation: slideInImage 1.8s ease-out;
 }
 
 .imageSection img {
-    height: 400px;
+    height: 350px;
     width: auto;
     border-radius: 20px;
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.7);
@@ -144,8 +154,7 @@
         flex-direction: column;
         text-align: center;
         padding: 20px;
-        height: auto;
-        margin-top: 100px;
+        margin-top: 200px;
         margin-bottom: 200px;
     }
 
@@ -165,13 +174,70 @@
     }
 
     .imageSection {
-        max-width: 100%;
         justify-content: center;
     }
 
     .imageSection img {
-        height: 200px;
-        width: 200px;
+        height: 220px;
+        width: 220px;
+        border-radius: 15px;
+    }
+}
+
+/* Large screens */
+@media (min-width: 1024px) {
+    .bioContainer {
+        margin-top: 150px;
+        max-width: 1400px;
+    }
+
+    .textSection h1 {
+        font-size: 3.5rem;
+    }
+
+    .textSection p {
+        font-size: 2rem;
+    }
+
+    .imageSection {
+        margin-left: 50px;
+    }
+
+    .imageSection img {
+        height: 400px;
+        transform: translateX(+50px);
+    }
+}
+
+/* Tablet View (Portrait & Landscape) */
+@media (min-width: 769px) and (max-width: 1023px) {
+    .bioContainer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 30px;
+        gap: 30px;
+        margin-top: 300px;
+        /* Adds space between text and image */
+    }
+
+    .textSection {
+        max-width: 100%;
+    }
+
+    .textSection h1 {
+        font-size: 2.8rem;
+        margin-bottom: 10px;
+    }
+
+    .textSection p {
+        font-size: 1.5rem;
+        margin: 15px 0;
+    }
+
+    .imageSection img {
+        height: 300px;
+        width: auto;
         border-radius: 15px;
     }
 }

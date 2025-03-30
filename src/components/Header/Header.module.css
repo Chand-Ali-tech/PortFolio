@@ -2,33 +2,35 @@
 .header {
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    padding: 15px 0;
-    /* Remove horizontal padding to eliminate left/right spaces */
-    position: relative;
+    justify-content: space-between;
+    padding: 15px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--background-color);
     z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Logo styling */
-.logo {
-    flex-shrink: 0;
-    margin-left: 0;
-    /* Remove margin to align logo flush to the left */
-}
-
 .logo img {
     height: 60px;
     width: auto;
-    border-radius: 15%;
+    border-radius: 12%;
     object-fit: contain;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* Navigation menu */
 .nav {
     display: flex;
     gap: 30px;
-    margin-left: auto;
     transition: transform 0.3s ease-in-out;
 }
 
@@ -38,148 +40,219 @@
     text-transform: uppercase;
     font-weight: 500;
     margin: 0;
-    text-decoration: none;
-    transition: color 0.3s, text-shadow 0.3s;
+    transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
 }
 
 .nav h1:hover {
     color: rgb(149, 255, 0);
-    text-shadow: 0px 0px 8px rgb(149, 255, 0);
+    text-shadow: 0px 0px 10px rgba(149, 255, 0, 0.8);
 }
 
-/* Sidebar icon (bars and cross) */
+/* Sidebar icon (☰) */
 .sidebarIcon {
     display: none;
+    font-size: 32px;
     cursor: pointer;
-    font-size: 24px;
-    z-index: 1001;
-    margin-left: 10px;
-    /* Space between theme changer and sidebar icon */
+    padding: 8px;
+    color: #95ff00;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    margin-right: 20px;
 }
 
-/* Sidebar active state */
-.nav.active {
-    transform: translateX(0);
-    flex-direction: column;
+.sidebarIcon:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 12px rgba(149, 255, 0, 0.8);
+}
+
+/* Close icon (❌) */
+.closeIcon {
+    display: none;
     position: absolute;
-    top: 90px;
-    right: 0;
-    background-color: var(--background-color);
-    padding: 20px;
-    gap: 30px;
-    width: 100%;
-    /* max-width: 300px; */
-    box-shadow: 0px 0px 1px rgb(149, 255, 0);
-    z-index: 1000;
-    color: var(--text-color);
-    height: 350px;
-    width: 350px;
-    border-radius: 15px;
+    top: 15px;
+    right: 20px;
+    font-size: 32px;
+    cursor: pointer;
+    color: red;
+    transition: transform 0.2s ease-in-out;
 }
 
-/* Theme changer section */
-.themeChanger {
+.closeIcon:hover {
+    transform: rotate(90deg);
+}
+
+/* Full-Screen Mobile Menu */
+.nav.active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    margin-right: 0;
-    /* Remove margin to align flush to the right */
+    gap: 25px;
+    background-color: var(--background-color);
+    z-index: 999;
+    transform: translateX(0);
 }
 
-button {
+.nav.active .closeIcon {
+    display: block;
+}
+
+/* General Button */
+.btn {
     all: unset;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 40px;
     height: 40px;
-    background-color: black;
+    background-color: var(--background-color);
     border-radius: 50%;
     cursor: pointer;
     font-size: 22px;
-    transition: transform 0.2s;
+    margin-right: 35px;
 }
 
-button:hover {
-    background-color: black;
-    transform: none;
+/* 📌 Updated "Connect" Button */
+.connect_btn {
+    background: linear-gradient(90deg, #bfff00, #a8ff00);
+    color: black;
+    width: 160px;
+    height: 22px;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    text-transform: uppercase;
+    transform: translateY(-4px);
 }
 
-.sunIcon,
-.moonIcon {
-    color: rgb(107, 166, 24) !important;
+.connect_btn:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-.sunIcon:hover,
-.moonIcon:hover {
-    color: inherit;
+/* Header container */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--background-color);
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    /* Smooth transition */
 }
 
-/* Mobile-friendly responsiveness */
-@media (max-width: 768px) {
+/* Hide header on scroll down */
+.hidden {
+    transform: translateY(-100%);
+    /* Moves header out of view */
+}
 
+/* Responsive Styling */
+@media (max-width: 1024px) {
     .header {
-        /* flex-direction: row;
-        align-items: center;
-        justify-content: space-between; */
-        display: fixed;
+        padding: 12px 16px;
+    }
+
+    .btn {
+        margin: auto;
     }
 
     .logo img {
-
-        display: absolute;
-        left: 0px;
-        /* justify-content: left; */
-    }
-
-    .logo {
-        flex-grow: 0;
-        margin-left: 0;
-        /* Ensure logo aligns flush left */
-    }
-
-    .themeChanger {
-        margin-right: 10px;
-        display: flex;
-        align-items: center;
-    }
-
-    .sidebarIcon {
-        display: block;
-        margin-right: 0;
-        /* Align sidebar icon flush to the right */
+        height: 50px;
     }
 
     .nav {
         display: none;
-        position: absolute;
-        top: 70px;
-        right: -100%;
-        flex-direction: column;
-        width: 70%;
-        max-width: 300px;
-        background-color: #000;
-        padding: 20px;
-        gap: 15px;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
     }
 
     .nav.active {
         display: flex;
-        transform: translateX(0);
     }
 
-    button {
-        margin-left: 0;
-
+    .sidebarIcon {
+        display: block;
     }
 
-    #connect_btn {
-        margin: auto;
+    .connect_btn {
+        width: 70%;
+        /* max-width: 170px; */
+        height: 38px;
+        font-size: 1.1rem;
+        padding: 10px 16px;
+    }
+
+}
+
+
+/* Large Screens */
+@media (min-width: 1025px) {
+    .connect_btn {
+        width: 100%;
+        height: 40px;
+        font-size: 1.1rem;
     }
 }
 
-/* General hover effects for sidebar menu */
-.nav h1:hover {
-    color: rgb(149, 255, 0);
-    text-shadow: 0px 0px 8px rgb(149, 255, 0);
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .header {
+        padding: 20px 30px;
+    }
+
+    .logo img {
+        height: 60px;
+    }
+
+    .nav {
+        gap: 30px;
+    }
+
+    .nav h1 {
+        font-size: 18px;
+    }
+
+    .connect_btn {
+        background: linear-gradient(90deg, #bfff00, #a8ff00);
+        color: black;
+        width: 150px;
+        height: 22px;
+        transform: translateY(-3px);
+    }
+}
+
+/* Extra-Large Screens */
+@media (min-width: 1441px) {
+    .header {
+        padding: 25px 40px;
+    }
+
+    .logo img {
+        height: 70px;
+    }
+
+    .nav {
+        gap: 40px;
+    }
+
+    .nav h1 {
+        font-size: 20px;
+    }
 }

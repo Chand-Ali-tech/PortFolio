@@ -1,114 +1,116 @@
+/* Footer Container */
 .footer {
-  padding: 2rem 1rem; /* Top and bottom spacing */
-  border-top: 2px solid rgba(149, 255, 0, 0.8); /* Green border */
-  text-align: center; /* Center-align text on smaller screens */
+  padding: 2rem 1rem;
+  border-top: 2px solid rgba(149, 255, 0, 0.8);
+  text-align: center;
+  /* background-color: #000; */
+  /* color: #e4e4e4; */
 }
 
+/* Layout */
 .container {
-  display: flex; /* Flexbox for layout */
-  flex-wrap: wrap; /* Allow items to wrap for responsiveness */
-  justify-content: space-between; /* Even spacing between sections */
-  align-items: center; /* Vertically align items */
-  max-width: 1200px; /* Limit the maximum width */
-  margin: 0 auto; /* Center container horizontally */
-  gap: 2rem; /* Space between items */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem;
+  gap: 2rem;
 }
 
-/* Headings */
-h2 {
-  font-size: 1.2rem; /* Slightly larger heading size */
-  margin-bottom: 0.5rem; /* Space below headings */
-  color: #95ff00; /* Neon green for a modern look */
+/* Social Media Section */
+.socials {
+  flex: 1;
+  text-align: center;
 }
 
-/* Paragraphs */
-p {
-  font-size: 1rem; /* Adjusted for readability */
-  margin: 0.3rem 0; /* Reduce spacing between lines */
-  line-height: 1.4; /* Optimal line spacing */
-  color: #e4e4e4; /* Light text color */
+.socials h2 {
+  font-size: 1.0rem;
+  /* color: #95ff00; */
+  margin-bottom: 10px;
 }
 
-/* Social icons container */
+/* Social Icons */
 .icons {
-  display: flex; /* Align icons in a row */
-  gap: 1rem; /* Space between icons */
-  justify-content: center; /* Center align on smaller screens */
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  color: var(--text-color);;
 }
 
-/* Social icon links */
 .iconLink {
-  font-size: 1.5rem; /* Adjust icon size */
-  color: var(--text-color); /* Default text color */
-  transition: color 0.3s ease; /* Smooth hover effect */
+  font-size: 1.1rem;
+  /* color: #95ff00; */
+  transition: transform 0.3s ease, color 0.3s ease;
+  color: var(--text-color);;
 }
 
 .iconLink:hover {
-  color: #95ff00; /* Neon green hover effect */
+  /* color: #fff; */
+  transform: scale(1.1);
 }
 
-/* Contact section */
+/* Contact Section */
+.contact {
+  flex: 1;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 1.1rem;
+  /* color: #95ff00; */
+  margin-bottom: 10px;
+}
+
 .contact p {
-  margin: 0.2rem 0; /* Reduce space between contact details */
-  color: #e4e4e4; /* Light text color */
+  font-size: 0.8rem;
+  /* color: #e4e4e4; */
+  margin: 5px 0;
 }
 
-/* Copyright text */
+/* Copyright Text */
 .copyright {
-  font-size: 0.9rem; /* Smaller copyright text */
-  color: #aaa; /* Subtle light gray */
-  text-align: center; /* Center-align text */
-  margin-top: 1rem; /* Space above copyright */
-}
-
-/* Footer container layout */
-.footer {
-  display: flex; /* Flexible layout */
-  flex-direction: column; /* Stack items vertically */
-  align-items: center; /* Center items horizontally */
-  justify-content: space-between; /* Spread content evenly */
-  min-height: 150px; /* Ensure sufficient footer height */
+  font-size: 0.7rem;
+  /* color: #aaa; */
+  margin-top: 1rem;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .container {
-    flex-direction: column; /* Stack sections vertically */
-    gap: 1.5rem; /* Reduce gap for smaller screens */
-    text-align: center; /* Center-align text and icons */
-  }
-
-  .icons {
-    gap: 0.8rem; /* Closer spacing for smaller screens */
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
   }
 
   .iconLink {
-    font-size: 1.3rem; /* Slightly smaller icons for tablets */
+    font-size: 1.2rem;
   }
 
   h2 {
-    font-size: 1.1rem; /* Slightly smaller headings */
+    font-size: 0.5rem;
   }
 
   p {
-    font-size: 0.9rem; /* Smaller text */
+    font-size: 0.4rem;
   }
 }
 
 @media (max-width: 480px) {
   .container {
-    padding: 1rem; /* Adjust padding for mobile screens */
+    padding: 1rem;
   }
 
   h2 {
-    font-size: 1rem; /* Smaller heading size for mobile */
+    font-size: 0.5rem;
   }
 
   .iconLink {
-    font-size: 1.2rem; /* Reduce icon size on very small screens */
+    font-size: 1.3rem;
   }
 
   p {
-    font-size: 0.8rem; /* Smaller text size for mobile */
+    font-size: 0.85rem;
   }
 }

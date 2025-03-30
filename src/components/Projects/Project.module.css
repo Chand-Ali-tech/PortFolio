@@ -1,43 +1,33 @@
 .projectContainer {
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    color: #6ebb02; /* Professional green font color */
-    padding: 0rem;
+    flex-direction: column;
+    align-items: center;
+    color: #6ebb02;
+    padding: 1rem;
     border-radius: 8px;
-    margin-bottom: 0rem; 
+    text-align: center;
 }
 
 .projectImage {
-    flex: 1; /* Image takes half the width */
+    width: 100%;
     max-width: 400px;
-    height: 200px;
+    height: auto;
     border-radius: 8px;
-    margin-right: 1.5rem;
     object-fit: cover;
-    border: 1px solid  var(--text-color);
+    border: 1px solid var(--text-color);
 }
 
 .projectContent {
-    flex: 1; /* Text content takes half the width */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    text-align: center;
 }
 
 .projectName {
     font-size: 1.5rem;
     font-weight: bold;
-    margin-bottom: 0.5rem;
-    color: #6ebb02; /* Highlighted green */
-}
-
-.projectTechnologies {
-    /* margin-bottom: 1rem; */
-    font-size: 0.5rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
+    color: #6ebb02;
 }
 
 .technologyBadge {
@@ -46,19 +36,14 @@
     padding: 0.3rem 0.6rem;
     border-radius: 4px;
     font-size: 0.8rem;
+    display: inline-block;
+    margin: 2px;
 }
 
 .projectDescription {
-    margin-bottom: 1.5rem;
     font-size: 0.9rem;
     line-height: 1.5;
     color: gray;
-}
-
-.projectLink {
-    font-size: 0.9rem;
-    font-weight: bold;
-    text-align: left;
 }
 
 .projectLink a {
@@ -75,43 +60,73 @@
     color: black;
 }
 
-/* Add responsiveness for smaller screens */
+/* Adjustments for smaller screens */
 @media (max-width: 768px) {
-    .projectContainer {
-        flex-direction: column;
-    }
-
     .projectImage {
-        flex: none;
+        width: 85%;
+        height: 50%;
+        margin-bottom: 20px;
+    }
+
+    .projectName {
+        font-size: 1.6rem;
+        margin-bottom: 10px;
+    }
+
+    .projectTechnologies {
         width: 100%;
-        margin-right: 0;
-        margin-bottom: 1.5rem;
+        height: 60px;
     }
 
-    .projectContent {
-        flex: none;
-    }
-    .projectName{
-        font-size: 1rem;
+    .projectDescription {
+        width: 100%;
+        height: 75px;
     }
 }
 
-.showMoreButton {
-    display: flex;
-    justify-content: center; /* Centers the button horizontally */
-    margin-top: 1rem;
-  }
-button{
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    background-color: rgba(149, 255, 0, 1);
-    color: black;
-    text-align: center;
+@media (min-width: 1024px) {
+    .projectImage {
+        width: 100%;
+        height: 200px;
+        margin-bottom: 20px;
+    }
+
+    .projectName {
+        font-size: 1.6rem;
+        margin-bottom: 10px;
+    }
+
+    .projectTechnologies {
+        width: 100%;
+        height: 60px;
+    }
+
+    .projectDescription {
+        width: 100%;
+        height: 75px;
+    }
 }
 
-button:hover{
-    background-color: rgba(149, 255, 0, 0.714);
-    color: black;
+
+@media (min-width: 769px) and (max-width: 1023px) {
+    .projectImage {
+        width: 100%;
+        height: 200px;
+        margin-bottom: 20px;
+    }
+
+    .projectName {
+        font-size: 1.6rem;
+        margin-bottom: 10px;
+    }
+
+    .projectTechnologies {
+        width: 100%;
+        height: 60px;
+    }
+
+    .projectDescription {
+        width: 100%;
+        height: 75px;
+    }
 }

@@ -20,7 +20,7 @@ body {
   display: flex;
   flex-direction: column;
   place-items: center;
-  
+
   background-color: var(--background-color);
   color: var(--text-color);
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -40,96 +40,4 @@ body.day {
   /* Light gray background */
   --text-color: #000000;
   /* Black text color */
-}
-
-#btn1,
-#btn2 {
-  all: unset;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 40px;
-  height: 40px;
-  background-color: var(--background-color);
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 22px;
-  margin-left: 15px;
-}
-
-#projects,
-#resume,
-#contact,
-#connect {
-  margin-bottom: 2rem;
-}
-
-#connect_btn {
-  background: linear-gradient(90deg, #8eff00, #95ff00);
-  color: black;
-  width: 160px;
-  height: 38px;
-  border: none;
-  border-radius: 25px;
-  font-size: 1rem;
-  font-weight: bold;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transform: translateY(-3px);
-}
-
-#connect_btn:hover {
-  background: linear-gradient(90deg, #95ff00, #8eff00);
-  transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-}
-
-#connect_btn:active {
-  transform: translateY(1px);
-  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2);
-}
-
-#connect_btn:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(149, 255, 0, 0.5);
-}
-
-#resume {
-  border-bottom: 2px double gray;
-  padding-bottom: 50px;
-}
-
-/* Media Query for screens with max width of 768px */
-@media (max-width: 768px) {
-  #connect_btn {
-    background: linear-gradient(90deg, #8eff00, #95ff00);
-    color: black;
-    width: 250px;
-    height: 38px;
-    border: none;
-    border-radius: 25px;
-    font-size: 1rem;
-    font-weight: bold;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transform: translateY(-3px);
-
-    /* Centering within parent container */
-    margin: 0 auto;
-    display: block;
-  }
-  #__btn{
-    width: 70px;
-    font-size: 13px;
-  }
 }

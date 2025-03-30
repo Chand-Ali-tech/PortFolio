@@ -1,3 +1,8 @@
+/* Prevent horizontal scrolling */
+body {
+    overflow-x: hidden;
+}
+
 .contact {
     text-align: center;
     padding: 2rem 1rem;
@@ -10,12 +15,13 @@
     margin-bottom: 50px;
 }
 
+/* Dynamic grid layout */
 .grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1rem;
     padding: 2rem;
-    justify-content: center;
+    justify-items: center;
 }
 
 .contactCard {
@@ -28,9 +34,8 @@
     padding: 1.5rem;
     text-align: center;
     transition: transform 0.3s ease;
-    width: 250px;
-    height: 80px;
-    margin-bottom: 10px;
+    width: 100%;
+    max-width: 280px;
 }
 
 .contactCard:hover {
@@ -44,7 +49,7 @@
 }
 
 .contactCard h2 {
-    font-size: 1.0rem;
+    font-size: 1rem;
     font-weight: bold;
     text-transform: uppercase;
     margin: 0;
@@ -56,27 +61,29 @@
     text-decoration: none;
     color: var(--text-color);
     transition: color 0.3s ease;
+    word-break: break-word;
 }
 
 .contactCard a:hover {
     color: rgba(149, 255, 0, 1);
 }
 
-/* Responsive Adjustments */
+/* ========== Responsive Adjustments ========== */
+
+/* Mobile Screens */
 @media (max-width: 768px) {
     .title {
         font-size: 2rem;
     }
 
     .grid {
+        grid-template-columns: 1fr;
         padding: 1rem;
-        gap: 1rem;
     }
 
     .contactCard {
-        width: 70%;
+        width: 90%;
         padding: 1rem;
-        height: 70%;
     }
 
     .icon {
@@ -86,26 +93,55 @@
     .contactCard h2 {
         font-size: 1rem;
     }
+    .contact {
+        margin-bottom: 40px;
+    }
 }
 
-@media (max-width: 480px) {
-    .title {
-        font-size: 1.75rem;
+/* Tablets (iPads, 769px - 1023px) */
+@media (min-width: 769px) and (max-width: 1023px) {
+    .contact {
+        margin-bottom: 50px;
     }
-
     .grid {
-        padding: 0;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
     }
 
     .contactCard {
-        padding: 0.8rem;
+        max-width: 260px;
     }
 
     .icon {
-        font-size: 1.5rem;
+        font-size: 2.2rem;
     }
 
     .contactCard h2 {
-        font-size: 0.9rem;
+        font-size: 1.2rem;
+    }
+}
+
+/* Laptops & Large Screens (1024px and above) */
+@media (min-width: 1024px) {
+    .contact {
+        width: 100%;
+        margin-bottom: 100px;
+    }
+
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .contactCard {
+        max-width: 280px;
+        height: 90px;
+    }
+
+    .icon {
+        font-size: 2.5rem;
+    }
+
+    .contactCard h2 {
+        font-size: 1.25rem;
     }
 }

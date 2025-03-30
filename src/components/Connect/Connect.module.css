@@ -1,20 +1,29 @@
-/* General container for the form */
+/* Full Section Styling */
+.connectSection {
+  text-align: center;
+  padding: 2rem 1rem;
+  /* background-color: #000; */
+}
+
+/* Title Styling */
+.title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  /* Reduced from 50px */
+  /* color: white; */
+}
+
+/* General Container */
 .connectContainer {
-  margin-top: 1px;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
   padding: 20px;
-  background-color: #000;
-  /* Keeps background clean */
 }
 
-h1 {
-  margin-bottom: 0px !important;
-}
-
-/* Styling for the form container */
+/* Styling for the Form Container */
 .formContainer {
   width: 100%;
   max-width: 500px;
@@ -22,70 +31,70 @@ h1 {
   border-radius: 12px;
   border: 1px solid #6ebb02;
   box-shadow: 0 0 2px rgba(110, 187, 2, 0.6);
+  /* background-color: black; */
 }
 
 /* Form heading */
 .formContainer h2 {
   font-size: 28px;
   font-weight: bold;
-  color: #6ebb02;
+  /* color: #6ebb02; */
   margin-bottom: 20px;
   text-align: center;
 }
 
-/* Styling for each form group */
+/* Form Group (Inputs & Textarea) */
 .formGroup {
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
 }
 
-/* Input fields */
+/* Input Fields */
 .formGroup input,
 .formGroup textarea {
   padding: 14px;
   font-size: 16px;
   background: transparent;
-  color: #fff;
+  /* color: #fff; */
   border: 1px solid #243d00;
-  /* border: none; */
   border-radius: 6px;
   transition: all 0.3s ease-in-out;
   outline: none;
 }
 
-/* Placeholder styling */
+/* Placeholder Styling */
 .formGroup input::placeholder,
 .formGroup textarea::placeholder {
-  color: rgba(255, 255, 255, 0.6);
+  /* color: rgba(255, 255, 255, 0.6); */
 }
 
-/* Focus effect for inputs */
+/* Focus Effect for Inputs */
 .formGroup input:focus,
 .formGroup textarea:focus {
   border-color: #00ff00;
   box-shadow: 0 0 8px rgba(0, 255, 0, 0.7);
 }
 
-/* Hover effect for inputs */
+/* Hover Effect for Inputs */
 .formGroup input:hover,
 .formGroup textarea:hover {
-  background-color: rgba(110, 187, 2, 0.1);
+  /* background-color: rgba(110, 187, 2, 0.1); */
 }
 
-/* Textarea specific styling */
+/* Textarea Styling */
 .formGroup textarea {
   resize: none;
   height: 120px;
 }
 
-/* Submit button */
+/* Submit Button */
 .submitButton {
   padding: 14px;
   font-size: 18px;
   font-weight: bold;
   background-color: #00ff00;
-  color: #000;
+  /* color: #000; */
   border: none;
   border-radius: 6px;
   cursor: pointer;
@@ -93,16 +102,30 @@ h1 {
   width: 100%;
 }
 
-/* Hover effect for submit button */
+/* Hover Effect for Submit Button */
 .submitButton:hover {
   background-color: #00cc00;
   transform: scale(1.05);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
+/* 🔹 Responsive Adjustments */
+
+/* Tablets & Small Screens */
+@media (max-width: 1024px) {
+  .connectContainer {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+  }
+
   .formContainer {
-    padding: 20px;
+    width: 85%;
+    padding: 30px;
+  }
+
+  .title {
+    font-size: 2rem;
+    margin-bottom: 20px;
   }
 
   .formContainer h2 {
@@ -121,19 +144,61 @@ h1 {
   }
 }
 
-@media (max-width: 480px) {
+/* Mobile Screens */
+@media (max-width: 768px) {
+  .connectContainer {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    margin-top: 20px;
+    /* Fixes large gap */
+  }
+
   .formContainer {
-    padding: 15px;
+    width: 90%;
+    padding: 20px;
+  }
+
+  .title {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
   }
 
   .formContainer h2 {
-    font-size: 20px;
-    margin-bottom: 15px;
+    font-size: 22px;
   }
 
   .formGroup input,
   .formGroup textarea {
     font-size: 13px;
+    padding: 10px;
+  }
+
+  .submitButton {
+    font-size: 15px;
+    padding: 10px;
+  }
+}
+
+/* Extra Small Screens (Phones) */
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+  }
+
+  .formContainer {
+    padding: 15px;
+    width: 95%;
+  }
+
+  .formContainer h2 {
+    font-size: 20px;
+  }
+
+  .formGroup input,
+  .formGroup textarea {
+    font-size: 12px;
     padding: 8px;
   }
 

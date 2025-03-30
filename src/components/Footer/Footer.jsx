@@ -10,8 +10,9 @@ import styles from "./Footer.module.css";
 
 function Footer() {
   return (
-    <div className={styles.footer}>
+    <footer className={styles.footer}>
       <div className={styles.container}>
+        {/* Social Media Links */}
         <div className={styles.socials}>
           <h2>Follow Me</h2>
           <div className={styles.icons}>
@@ -57,16 +58,20 @@ function Footer() {
             </a>
           </div>
         </div>
+
+        {/* Contact Information */}
         <div className={styles.contact}>
           <h2>Contact</h2>
           <p>Email: chand.ali.web@gmail.com</p>
           <p>Phone: 0312-4034055</p>
         </div>
       </div>
+
+      {/* Copyright */}
       <p className={styles.copyright}>
         © {new Date().getFullYear()} Chand Ali. All rights reserved.
       </p>
-    </div>
+    </footer>
   );
 }
 

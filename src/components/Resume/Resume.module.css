@@ -1,75 +1,62 @@
+/* Prevent horizontal scrolling */
+body {
+  overflow-x: hidden;
+}
+
+.resumeSection {
+  text-align: center;
+  padding: 2rem;
+}
+
 .title {
   font-size: 2.5rem;
   font-weight: 800;
-  /* color: #d8d8d8; */
-  text-align: center;
   text-transform: uppercase;
-  letter-spacing: 0px;
-  position: relative;
-  margin: 20px 0;
   margin-bottom: 50px;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  /* Two columns per row */
-  gap: 1rem;
-  /* Space between cards */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
   padding: 2rem;
-  /* Padding around the grid */
+  justify-items: center;
 }
 
 .headingCard {
   display: flex;
   flex-direction: column;
-  /* Align icon and heading vertically */
   justify-content: center;
   align-items: center;
-  /* background: black; */
-  /* Background color of the card */
   border: 1px solid #6ebb02;
-  /* Border style */
   border-radius: 15px;
-  /* Rounded corners */
   padding: 1.5rem;
-  /* Inner padding */
   text-align: center;
-  /* Center-align content */
-  transition: all 0.3s ease;
-  /* Smooth hover effect */
-  width: 250px;
-  height: 80px;
-  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+  width: 100%;
+  max-width: 280px;
 }
 
 .headingCard:hover {
-
   transform: translateY(-10px);
-  /* Move card up on hover */
 }
 
 .icon {
   font-size: 2.5rem;
-  /* Size of FontAwesome icon */
   color: #6ebb02;
-  /* Icon color */
   margin-bottom: 1rem;
-  /* Space below the icon */
 }
 
 h2 {
   font-size: 1.25rem;
   font-weight: bold;
   text-transform: uppercase;
-  /* color: white; */
   color: var(--text-color);
   margin: 0;
   transition: color 0.3s ease;
 }
 
-
-
+/* Download Button */
 .downloadButton {
   text-align: center;
   font-size: 1rem;
@@ -77,55 +64,119 @@ h2 {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  background-color: black;
-  color: rgba(149, 255, 0, 1);
+  background-color: rgba(149, 255, 0, 1);
+  color: black;
   border: 2px solid rgba(149, 255, 0, 1);
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 2rem auto 0 auto;
-  /* Center button horizontally */
+  max-width: 250px;
+  white-space: nowrap;
+  /* Prevents line breaks */
+}
+
+/* Remove hover effect that caused scrollbar */
+.downloadButton:hover {
   background-color: rgba(149, 255, 0, 1);
   color: black;
 }
 
-.__set {
-  margin-left: 20px;
-  font-size: 30px;
+.iconFile {
+  margin-left: 10px;
+  font-size: 25px;
 }
 
+/* ====== Responsive Design ====== */
 
+/* Mobile Screens */
 @media (max-width: 768px) {
   .title {
     font-size: 2rem;
   }
 
   .grid {
+    grid-template-columns: 1fr;
     padding: 1rem;
-    gap: 1rem; /* Reduce spacing between cards */
   }
 
   .headingCard {
-    width: 70%;
-    padding: 1rem; /* Smaller padding on smaller screens */
-    height: 70%; /* Adjust height for content */
+    width: 90%;
+    padding: 1rem;
   }
 
   .icon {
-    font-size: 2rem; /* Smaller icons */
+    font-size: 2rem;
   }
 
   h2 {
-    font-size: 1rem; /* Reduce heading font size */
+    font-size: 1.1rem;
   }
 
   .downloadButton {
-    width: 80%; /* Full width button for mobile */
+    width: 90%;
     font-size: 1rem;
   }
 
-  .__set {
-    font-size: 20px; /* Adjust file icon size */
+  .iconFile {
+    font-size: 20px;
+  }
+  .resumeSection{
+    margin-bottom: 40px;
+  }
+}
+
+/* Tablets */
+@media (min-width: 769px) and (max-width: 1023px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .headingCard {
+    max-width: 260px;
+  }
+
+  .icon {
+    font-size: 2.2rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  .downloadButton {
+    width: 50%;
+  }
+  .resumeSection{
+    margin-bottom: 50px;
+  }
+}
+
+/* Laptops & Large Screens */
+@media (min-width: 1024px) {
+  .resumeSection {
+    width: 100%;
+    margin-bottom: 100px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .headingCard {
+    max-width: 280px;
+  }
+
+  .icon {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  .downloadButton {
+    width: auto;
   }
 }

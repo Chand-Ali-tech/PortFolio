@@ -1,3 +1,12 @@
+/* Prevent horizontal scrolling */
+html,
+body {
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 /* General section styling */
 .educationContainer {
     display: flex;
@@ -7,9 +16,12 @@
     padding: 50px 20px;
     color: #c6c1c1;
     font-family: "Arial", sans-serif;
-    max-width: 1200px;
+    max-width: 100%;
+    width: 100%;
     margin: 0 auto;
     height: auto;
+    box-sizing: border-box;
+    /* Ensures padding doesn’t increase width */
 }
 
 /* Individual column styling */
@@ -21,7 +33,7 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Section headings (Education & Work Experience) */
+/* Section headings */
 .sectionHeading {
     font-size: 1.5rem;
     font-weight: 500;
@@ -57,6 +69,11 @@
     justify-content: space-between;
 }
 
+.educationItem h3 span,
+.workItem h3 span {
+    text-align: right;
+}
+
 /* Degree/Position Title */
 .educationItem p:first-of-type,
 .workItem p:first-of-type {
@@ -65,14 +82,14 @@
     color: #60a400;
 }
 
-/* Duration/Year Styling */
+/* Year Styling */
 .educationItem p:last-of-type,
 .workItem p:last-of-type {
     font-size: 1rem;
     font-weight: 100;
 }
 
-/* General heading styling */
+/* Main heading */
 h1 {
     font-size: 2.4rem;
     font-weight: 800;
@@ -81,12 +98,52 @@ h1 {
     margin: 20px 0 50px 0;
 }
 
-/* Responsive Design for Tablets */
+/* ---------------- Responsive Design ---------------- */
+
+/* Tablets (769px - 1023px) */
+@media (min-width: 769px) and (max-width: 1023px) {
+    .educationContainer {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .educationSection {
+        margin-top: 160px;
+    }
+
+    .column {
+        width: 80%;
+    }
+
+    .educationItem h3,
+    .workItem h3 {
+        font-size: 1.3rem;
+    }
+
+    .educationItem p,
+    .workItem p {
+        font-size: 1.1rem;
+        text-align: left;
+    }
+
+    h1 {
+        font-size: 2.2rem !important;
+    }
+}
+
+/* Mobile (≤768px) */
 @media (max-width: 768px) {
     .educationContainer {
         flex-direction: column;
         align-items: center;
         gap: 30px;
+        padding: 30px 10px;
+        text-align: left;
+        width: 100%;
+        max-width: 100%;
+        margin-left: 15px;
     }
 
     .column {
@@ -95,12 +152,27 @@ h1 {
 
     .educationItem h3,
     .workItem h3 {
-        font-size: 1.2rem;
+        font-size: 1rem;
+        font-weight: 700;
+        color: gray;
+        display: flex;
+        /* Make h3 a flex container */
+        justify-content: space-between;
+        /* Push elements apart */
+        align-items: center;
+        width: 100%;
+        gap: 10px;
+        /* Adds space between name and year */
     }
 
-    .educationItem p,
-    .workItem p {
-        font-size: 1rem;
+    /* Ensure year (span) is properly aligned to the right */
+    .educationItem h3 span,
+    .workItem h3 span {
+        text-align: right;
+        white-space: nowrap;
+        /* Prevents wrapping */
+        font-weight: 500;
+        color: #ffffffb0;
     }
 
     h1 {
@@ -108,45 +180,70 @@ h1 {
     }
 }
 
-/* Responsive Design for Mobile Screens (Smaller than 480px) */
+/* Small Mobile Screens (≤480px) */
 @media (max-width: 480px) {
     .educationContainer {
-        padding: 10px 5px; /* Reduced padding for smaller screens */
-        gap: 20px; /* Closer spacing between sections */
+        padding: 10px 5px;
+        gap: 20px;
+        max-width: 100%;
     }
 
     .column {
-        padding: 10px; /* Reduced padding inside columns */
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Softer shadow for smaller screens */
-        margin-left: 30px;
+        padding: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+        margin: 0 auto;
+        /* Fix for right scroll */
     }
 
     .sectionHeading {
-        font-size: 1.1rem; /* Smaller section heading font size */
-        padding-bottom: 5px; /* Adjust padding for smaller headings */
-        border-bottom: 1px solid #95ff00; /* Thinner border */
+        font-size: 1.1rem;
+        padding-bottom: 5px;
+        border-bottom: 1px solid #95ff00;
     }
 
     .educationItem h3,
     .workItem h3 {
-        font-size: 0.9rem; /* Smaller font size for organization/institution name */
-        flex-direction: column; /* Stack title and year vertically */
-        align-items: flex-start; /* Align text to the left */
-        gap: 3px; /* Smaller gap between elements */
+        font-size: 0.9rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 3px;
     }
 
     .educationItem p:first-of-type,
     .workItem p:first-of-type {
-        font-size: 0.9rem; /* Smaller degree/position title font size */
+        font-size: 0.9rem;
     }
 
     .educationItem p:last-of-type,
     .workItem p:last-of-type {
-        font-size: 0.8rem; /* Smaller duration/year font size */
+        font-size: 0.8rem;
     }
 
     h1 {
-        font-size: 1.6rem !important; /* Smaller main heading font size */
-        margin: 10px 0 30px 0; /* Adjusted spacing above and below the heading */
+        font-size: 1.6rem !important;
+        margin: 10px 0 30px 0;
+    }
+}
+
+/* Large Screens (≥1024px) */
+@media (min-width: 1024px) {
+    .educationContainer {
+        max-width: 1400px;
+    }
+
+    .educationSection {
+        margin-top: 200px;
+    }
+
+    .textSection h1 {
+        font-size: 3.5rem;
+    }
+
+    .textSection p {
+        font-size: 2rem;
+    }
+
+    .column {
+        width: 45%;
     }
 }

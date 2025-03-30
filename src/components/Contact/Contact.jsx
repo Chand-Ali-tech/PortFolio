@@ -1,8 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faPhone,
-  faEnvelope,
-} from "@fortawesome/free-solid-svg-icons"; // Free solid icons
+import { faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons"; // Free solid icons
 import {
   faLinkedin,
   faGithub,
@@ -11,7 +8,6 @@ import {
 import styles from "./Contact.module.css";
 
 function Contact() {
-
   return (
     <section className={styles.contact} id="contact">
       <h1 className={styles.title}>Contact Me</h1>

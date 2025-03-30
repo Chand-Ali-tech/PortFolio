@@ -6,7 +6,7 @@ import {
   faClock,
   faTrophy,
   faFile,
-} from "@fortawesome/free-solid-svg-icons"; // Import the `faFile` icon
+} from "@fortawesome/free-solid-svg-icons";
 import styles from "./Resume.module.css";
 
 function Resume() {
@@ -20,7 +20,7 @@ function Resume() {
   };
 
   return (
-    <section id="resume">
+    <section id="resume" className={styles.resumeSection}>
       <h1 className={styles.title}>My Resume</h1>
       <div className={styles.grid}>
         <div className={styles.headingCard}>
@@ -43,13 +43,10 @@ function Resume() {
           <FontAwesomeIcon icon={faTrophy} className={styles.icon} />
           <h2>Top 10% in the Industry</h2>
         </div>
-        
-
-        
-
       </div>
       <button className={styles.downloadButton} onClick={handleDownload}>
-        Download Resume <FontAwesomeIcon icon={faFile} className={ styles.__set} /> {/* Use the imported `faFile` icon */}
+        Download Resume{" "}
+        <FontAwesomeIcon icon={faFile} className={styles.iconFile} />
       </button>
     </section>
   );
